@@ -72,7 +72,7 @@ class SocketEncoder{
 	public static function getByte($array, &$pos)
 	{
 		$b = $array[$pos++];
-		return $b;
+		return (int)$b;
 	}
 
 	/**
@@ -86,7 +86,7 @@ class SocketEncoder{
 	{
 		$b = $array[$pos++] & 0xFF;
 		$b = ($b << 8) | $array[$pos++] & 0xFF;
-		return $b;
+		return (int)$b;
 	}
 
 	/**
@@ -100,7 +100,7 @@ class SocketEncoder{
 	{
 		$b = $array[$pos++] & 0xFF;
 		$b = $b | ($array[$pos++] & 0xFF) << 8;
-		return $b;
+		return (int)$b;
 	}
 
 	/**
@@ -116,7 +116,7 @@ class SocketEncoder{
 		$b = ($b << 8) | $array[$pos++] & 0xFF;
 		$b = ($b << 8) | $array[$pos++] & 0xFF;
 		$b = ($b << 8) | $array[$pos++] & 0xFF;
-		return $b;
+		return (int)$b;
 	}
 
 	/**

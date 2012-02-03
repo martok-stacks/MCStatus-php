@@ -38,8 +38,9 @@ class MCStatus{
 			trigger_error("Reply for session $rsess");
 			if ($sessid == $rsess) {
 				$rtoken = SocketEncoder::getPStr($data, $pos);
+				$rtoken = is_numeric($rtoken) ? (int)$rtoken : null;
 				trigger_error("Got Token $rtoken");
-				return (int)$rtoken;
+				return $rtoken;
 			}
 		}
 	}
