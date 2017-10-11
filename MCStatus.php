@@ -87,8 +87,8 @@ class MCStatus{
 				}
 				if (isset($result['info']['plugins'])) {
 					$p = $result['info']['plugins'];
-					list($server, $pl) = array_map('trim',split(':',$p));
-					$plugins = array_map('trim',split(';',$pl));
+					list($server, $pl) = array_map('trim',explode(':',$p));
+					$plugins = array_map('trim',explode(';',$pl));
 					$result['info']['bukkit-server'] = $server;
 					$result['info']['bukkit-plugins'] = $plugins;
 				}
